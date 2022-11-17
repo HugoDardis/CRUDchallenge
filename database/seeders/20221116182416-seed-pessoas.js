@@ -12,6 +12,22 @@ module.exports = {
       cpf: '00000000000',
       zipCode: 'anywhere',
       age: '22'  
+    },
+    {
+      id: '2',
+      name: 'Nhoj',
+      birthDate: '01-02-2107',
+      cpf: '00000000000',
+      zipCode: 'erehwyna',
+      age: '22'  
+    },
+    {
+      id: '3',
+      name: 'Honj',
+      birthDate: '10-10-2007',
+      cpf: '00000000000',
+      zipCode: 'hwynaere',
+      age: '22'  
     }], {});
 
   },

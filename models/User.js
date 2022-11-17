@@ -1,18 +1,18 @@
 const { DataTypes } = require("sequelize");
-const { sequelize } = require(".");
+
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
     "User",
     {
       id: {
-        type: DataTypes.STRING(1000),
+        type: DataTypes.STRING,
         primaryKey: true,
-        autoIncrement: true,
+        //autoIncrement: true,
         allowNull: false,
       },
       name: {
-        type: DataTypes.STRING(200),
+        type: DataTypes.STRING,
         allowNull: false,
       },
       birthDate: {
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       age: {
-        type: DataTypes.STRING(10),
+        type: DataTypes.STRING,
         allowNull: false,
       },
       createdAt: DataTypes.DATE,

@@ -6,13 +6,13 @@ module.exports = {
 
     await queryInterface.createTable('users', {
       id: {
-        type: Sequelize.DataTypes.STRING(1000),
+        type: Sequelize.DataTypes.STRING,
         primaryKey: true,
         //autoIncrement: true,
         allowNull: false,
       },
       name: {
-        type: Sequelize.DataTypes.STRING(200),
+        type: Sequelize.DataTypes.STRING,
         allowNull: false,
       },
       birthDate: {
@@ -28,7 +28,7 @@ module.exports = {
         allowNull: false,
       },
       age: {
-        type: Sequelize.DataTypes.STRING(10),
+        type: Sequelize.DataTypes.STRING,
         allowNull: false,
       },
       createdAt: Sequelize.DataTypes.DATE,
