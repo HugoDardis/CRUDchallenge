@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const {
   User
 } = require('../models')
@@ -43,11 +44,22 @@ const UsersController = {
       return res.status(500).json({err});
     }
   },
+  updateUser: async (req, res) => {
+    try {
+      const {id} = req.params;
+      const { name, birthDate, cpf, zipCode, age } = req.body
+      const updateUser = await User.update({ name, birthDate, cpf, zipCode, age}, {where: {id}});
+      return res.status(200).json(`updated`);
+      } catch (err) {
+        console.log(err)
+        return res.status(500).json({err});
+      }
+  }, 
   deleteUser: async (req, res) => {
       try {
         const { id } = req.params;
         const deleteUser = await User.destroy({where: {id}});
-        return res.status(200).json();
+        return res.status(200).json(`deleted`);
       } catch (err) {
         console.log(err)
         return res.status(500).json({err});
