@@ -31,7 +31,6 @@ const UsersController = {
     } catch (err) {
       console.log(err)
       return res.status(500).json({err});
-
     }
   },
   createUser: async (req, res) => {
@@ -43,7 +42,17 @@ const UsersController = {
       console.log(err)
       return res.status(500).json({err});
     }
-  }
+  },
+  deleteUser: async (req, res) => {
+      try {
+        const { id } = req.params;
+        const deleteUser = await User.destroy({where: {id}});
+        return res.status(200).json();
+      } catch (err) {
+        console.log(err)
+        return res.status(500).json({err});
+      }
+    }
 
 };
 
